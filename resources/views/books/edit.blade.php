@@ -10,4 +10,4 @@
     <input type="date" name="released_at" placeholder="date goes here" value="{{ $editBook->released_at }}">
     <input type="submit" value="Update">
 </form>
-<x-layout>
+</x-layout>

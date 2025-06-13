@@ -2,9 +2,11 @@
 <html>
 <head>
     <title>Book App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin:0;
+            font-family: 'Merriweather', serif;
         }
     .button-link {
     display: inline-block;
