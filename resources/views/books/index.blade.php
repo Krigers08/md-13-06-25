@@ -1,5 +1,5 @@
+<x-layout>
 <h1>Books</h1>
-<a href="{{route('books.create')}}">Create a book</a>
 <ul>
     @foreach($books as $book)
         <li>
@@ -12,3 +12,4 @@
         </li>
     @endforeach
 </ul>
+</x-layout>

@@ -1,3 +1,4 @@
+<x-layout>
 <h1>Edit book</h1>
 
 <form action="{{ route('books.update', ['id' => $editBook]) }}" method="post">
@@ -9,3 +10,4 @@
     <input type="date" name="released_at" placeholder="date goes here" value="{{ $editBook->released_at }}">
     <input type="submit" value="Update">
 </form>
+<x-layout>
