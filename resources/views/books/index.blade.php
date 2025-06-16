@@ -1,5 +1,4 @@
-<x-layout>
-<h1>Books</h1>
+<x-app-layout>
 <ul>
     @foreach($books as $book)
         <li>
@@ -12,4 +11,4 @@
         </li>
     @endforeach
 </ul>
-</x-layout>
+</x-app-layout>

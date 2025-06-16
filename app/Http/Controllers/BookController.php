@@ -9,6 +9,7 @@ class BookController extends Controller
 {
     public function index() {
         $books = Book::all();
+        $images = Image::all();
         return view('books.index',compact('books'));
     }
 
@@ -21,8 +22,11 @@ class BookController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:125',
             'released_at' => 'required|date',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',     
         ]);
 
+        $path = $request->file('image')->store('images', 'public');
+        $validatedData['image'] = $path;
         $book = Book::create($validatedData);
 
         return redirect('/books/' . $book->id);
@@ -38,7 +42,7 @@ class BookController extends Controller
         return view('books.edit', ['editBook' => $book]);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, Book $book) {
         $book = Book::find($id);
         $book->update([
             'title' => $request['title'],
